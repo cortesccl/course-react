@@ -23,10 +23,10 @@ export const CounterApp = ({ value }) => {
     <>
       <h1>CounterApp</h1>
       { /* <code> { JSON.stringify (newMessage) } </code>*/}
-      <h2> { counter } </h2>
-      <button onClick={ handleAdd }> + 1 </button>
-      <button onClick={ handleSubstract }> - 1 </button>
-      <button onClick={ handleReset }> Reset </button>
+      <h2>{ counter }</h2>
+      <button onClick={ handleAdd }>+1</button>
+      <button onClick={ handleSubstract }>-1</button>
+      <button aria-label="btn-reset" onClick={ handleReset }>Reset</button>
     </>
   )
 }
