@@ -36,7 +36,7 @@ export const SearchPage = () => {
         <div className="col-5">
           <h4>Searching</h4>
           <hr />
-          <form onSubmit={ onSearchSubmit }>
+          <form onSubmit={ onSearchSubmit } aria-label="form">
             <input
               type="text"
               placeholder="Search a hero"
@@ -65,7 +65,7 @@ export const SearchPage = () => {
           }        */}
 
           <div 
-            className="alert alert-primary animate__animated animate__fadeInLeft" 
+            className="alert alert-primary animate__animated animate__fadeInLeft"             
             style={{ display: showSearch ? '' : 'none'}}
           >
             Search a hero
@@ -73,6 +73,7 @@ export const SearchPage = () => {
 
           <div 
             className="alert alert-danger animate__animated animate__fadeInLeft"
+            aria-label="alert-danger"
             style={{ display: showError ? '' : 'none'}}
           >
             No hero with <b>{q}</b>
