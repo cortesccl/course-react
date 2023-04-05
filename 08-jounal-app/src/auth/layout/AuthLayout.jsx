@@ -2,20 +2,16 @@ import { Grid, Typography } from '@mui/material';
 
 
 export const AuthLayout = ({ children, title = '' }) => {
-    return (
-
-        <Grid
-            container
-            spacing={0}
-            direction="column"
-            alignItems="center"
-            justifyContent="center"
-            sx={{ 
-                    width: { md: 450 },
-                    minHeight: '100vh', 
-                    backgroundColor: 'primary.main', 
-                    padding: 4 }}
-        >
+  return (
+    
+    <Grid
+      container
+      spacing={ 0 }
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      sx={{ minHeight: '100vh', backgroundColor: 'primary.main', padding: 4 }}
+    >
 
             <Grid item
                 className='box-shadow'

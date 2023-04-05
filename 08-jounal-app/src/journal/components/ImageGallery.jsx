@@ -1,4 +1,4 @@
-import { ImageList, ImageListItem } from "@mui/material";
+import { ImageListItem, ImageList } from '@mui/material';
 
 export const  ImageGallery = () => {
   return (
