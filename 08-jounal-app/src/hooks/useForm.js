@@ -1,18 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 
-export const useForm = ( initialForm = {}, formValidations = {} ) => {
-  
-    const [ formState, setFormState ] = useState( initialForm );
-    const [formValidation, setFormValidation] = useState ({  })
+export const useForm = (initialForm = {}, formValidations = {}) => {
+
+    const [formState, setFormState] = useState(initialForm);
+    const [formValidation, setFormValidation] = useState({})
 
     useEffect(() => {
-      createValidators()
+        createValidators()
     }, [formState])
+
+    useEffect(() => {
+        setFormState(initialForm)
+    }, [initialForm])
     
-    const isFormValid = useMemo( () => {
-        
-        for (const formValue of Object.keys (formValidation)) {
-            if (formValidation[formValue] !== null ) return false
+    const isFormValid = useMemo(() => {
+
+        for (const formValue of Object.keys(formValidation)) {
+            if (formValidation[formValue] !== null) return false
         }
 
         return true
@@ -22,23 +26,23 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => {
         const { name, value } = target;
         setFormState({
             ...formState,
-            [ name ]: value
+            [name]: value
         });
     }
 
     const onResetForm = () => {
-        setFormState( initialForm );
+        setFormState(initialForm);
     }
 
     const createValidators = () => {
         const formCheckValues = {}
-        
-        for (const formField of Object.keys(formValidations)) {
-            const [ fn, errorMessage ] = formValidations[formField]
 
-            formCheckValues[`${ formField }Valid`] = fn( formState[formField]) ? null : errorMessage
+        for (const formField of Object.keys(formValidations)) {
+            const [fn, errorMessage] = formValidations[formField]
+
+            formCheckValues[`${formField}Valid`] = fn(formState[formField]) ? null : errorMessage
         }
-        setFormValidation (formCheckValues)
+        setFormValidation(formCheckValues)
     }
 
     return {
