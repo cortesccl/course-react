@@ -6,15 +6,25 @@ import { getFirestore } from 'firebase/firestore/lite'
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAaCvwx2jZrT1Y9hLruFbK_mHXb_Qp9Ni4",
-  authDomain: "react-scc-journal.firebaseapp.com",
-  projectId: "react-scc-journal",
-  storageBucket: "react-scc-journal.appspot.com",
-  messagingSenderId: "992410918917",
-  appId: "1:992410918917:web:4bc4f43ff3083108ae3c6c"
-};
+// Dev/Prod
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAaCvwx2jZrT1Y9hLruFbK_mHXb_Qp9Ni4",
+//   authDomain: "react-scc-journal.firebaseapp.com",
+//   projectId: "react-scc-journal",
+//   storageBucket: "react-scc-journal.appspot.com",
+//   messagingSenderId: "992410918917",
+//   appId: "1:992410918917:web:4bc4f43ff3083108ae3c6c"
+// };
 
+// Testing
+const firebaseConfig = {
+  apiKey: "AIzaSyD7hDsa-iiOPV_FOzysVw6ths8SkW797ks",
+  authDomain: "fir-testing-6abb0.firebaseapp.com",
+  projectId: "fir-testing-6abb0",
+  storageBucket: "fir-testing-6abb0.appspot.com",
+  messagingSenderId: "45274169576",
+  appId: "1:45274169576:web:72ff3404008492b2f9c95d"
+};
 // Initialize Firebase
 export const FirebaseApp = initializeApp(firebaseConfig);
 export const FirebaseAuth = getAuth (FirebaseApp)

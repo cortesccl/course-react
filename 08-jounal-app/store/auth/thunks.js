@@ -1,4 +1,3 @@
-import { signInWithEmailAndPassword } from "firebase/auth"
 import { loginWithEmailPassword, logoutFirebase, registerUserWithEmailPassword, signInWithGoogle } from "../../src/firebase/providers"
 import { checkingCredentials, login, logout } from "./authSlice"
 import { clearNotesLogout } from "../journal/journalSlice"
