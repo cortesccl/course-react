@@ -8,6 +8,7 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 import es from 'date-fns/locale/es'
 import { useCalendarStore, useUiStore } from '../../hooks';
+import { getEnvVariables } from '../../helpers';
 
 registerLocale('es', es)
 const customStyles = {
@@ -21,7 +22,9 @@ const customStyles = {
     },
 };
 
-Modal.setAppElement('#root');
+if (getEnvVariables().VITE_MODE !== 'test') {
+    Modal.setAppElement('#root');
+}
 
 export const CalendarModal = () => {
 
@@ -29,8 +32,8 @@ export const CalendarModal = () => {
     const { activeEvent, startSavingEvent } = useCalendarStore()  
     const [formSubmitted, setFormSubmitted] = useState(false)
     const [formValues, setFormValues] = useState({
-        title: 'Sara',
-        notes: 'Cortés',
+        title: '',
+        notes: '',
         start: new Date(),
         end: addHours(new Date(), 2)
     })
